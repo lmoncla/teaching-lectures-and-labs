@@ -53,8 +53,8 @@ The links below include ["narratives"](https://nextstrain.org/narratives/). Thes
 
 
 ### Helpful links: 
-Nextstrain documentation page: https://docs.nextstrain.org/en/latest/index.html
-Github repository for Nextstrain: https://github.com/nextstrain
+* Nextstrain documentation page: https://docs.nextstrain.org/en/latest/index.html
+* Github repository for Nextstrain: https://github.com/nextstrain
 
 
 
