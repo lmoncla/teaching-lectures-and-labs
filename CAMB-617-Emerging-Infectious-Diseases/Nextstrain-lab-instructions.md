@@ -5,16 +5,6 @@ In human populations, H3N2 and H1N1 influenza viruses circulate via seasonal epi
 
 Like all influenza viruses, H3 viruses naturally circulate in wild birds. It is thought that frequent reassortment in wild birds continually shuffles viral diversity and generates new subtypes. In addition to humans, avian origin H3 viruses have repeatedly spilled over into other host species, resulting in long-term transmission in pigs, horses, and dogs. However, surprisingly little is understood about how these viruses evolve in these other host species. Additionally, avian H3N8 viruses recently caused 3 infections in humans in China, some of which harbored mutations that are thought to improve viral replication in mammals. In this activity, we will explore how H3Nx viruses (meaning viruses with H3 HAs, packaged with any NA) evolve and trace their history of cross-species transmission. We will do this using [Nextstrain](https://nextstrain.org/), a set of bioinformatic tools that can be used to build interactive phylogenetic trees and for phylodynamic analysis. Other examples of Nextstrain, and how it has been used for outbreak investigation are linked below. Feel free to explore! 
 
-
-1. How many times have H3 viruses been introduced into new species? 
-2. When did these events occur? 
-3. Does reassortment contribute to patterns of circulation in different hosts? 
-4. How have these viruses spread geographically? 
-5. What roles do different hosts play in H3 transmission and evolution? 
-
-
-## Introduction to Nextstrain
-
 1. Navigate to the [H3Nx Nextstrain build](https://nextstrain.org/groups/moncla-lab/non-human-h3?c=host). This is a phylogenetic tree built from HA genes from a variety of host species. This is a time-resolved phylogeny, so the x-axis represents time in years. Each dot (or tip) represents a unique sampled HA sequence, and each internal node represents an inferred ancestor on the tree. In this view, we have used a model to infer the most likely ancestor at each internal node. For example, you can see that most of the deep branches in the tree are colored red, to indicate that that they are avian. This is because birds are the natural reservoir for influenza, so all circulating viruses in this tree that were sampled from other species were originally transmitted from birds. 
 
 2. We can change how we view the tree by interacting with the panel on the left. For example, if we wanted to change the view so that the tree was colored by geographic region instead of host, navigate to the `Color By` panel on the left, and click on the drop down menu. Select `Region`.   
