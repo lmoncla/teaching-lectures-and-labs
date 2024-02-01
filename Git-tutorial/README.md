@@ -32,4 +32,43 @@ c. Now, the final step is to push this change to the remote repository. To do th
 
 8. In order to revert on remote, we need to do another step, which is to reset our branch to a previous checkpoint. Again, use `git log` to figure out the HASH of the checkpoint you want to revert to. Now, type the following: `git reset --hard HASH`. This resets your local tree to HASH. Then, `git push -f origin main` to push to remote. Check online, and see that it is now reverted! This fully gets rid of any commits that happened afterwards, so it is destructive. There are other options available if you want to retain them. 
 
-## Making branches
+## Making and merging branches
+9. Now let's practice making a branch. Branches are useful for developing new features, and are especially useful when you'd like to make major changes and want to test them out before deploying them. Let's start by printing out our current branches wit `git branch -a`. You should see that currently, we only have one branch, `main`. To make a new one, type `git branch NEW-BRANCH-NAME`. Use `git branch -a`to check that you made it. Then, switch to it, with `git checkout NEW-BRANCH-NAME`. Now if you check again, see that we are now on our new branch! 
+
+10. Let's make a new commit to our `README.md`file on our new branch. Edit your file however you want, and make a new git add, and git commit. 
+
+11. Notice that at this point, your branch is not yet on remote. It currently only exists on our local. To push it to remote, we need to `git push origin NEW-BRANCH-NAME`. Origin tells git that we are pushing this branch to our remote, and that we want to make a new remote branch name with the same branch as our local, NEW-BRANCH-NAME. Notice now that online, the new branch exists! Also, if we type `git branch -a` into terminal, we now see our new branch listed as a remote branch.  
+
+12. One funny thing about git is that the version of your files that you see on your laptop changes depending on the branch you are currently on. Take a look at your README on your laptop, then switch back to your main branch by typing `git checkout main`. Now look at your README. It changed! That is because git shows you the file version of the branch it is on. 
+
+13. Let's pretend now that we are done editing on this branch, and we would like to add in our new edits into our original file. To do that, we need to merge our branch into our main branch. To do this, switch back to `main` branch with `git checkout main`and then merge with `git merge NEW-BRANCH-NAME`. You'll see a message that git merged by fastforwarding. To push this to remote, simply do `git push`. You can now see that now the merge is on github. Finally, since we are done with this branch, we can delete it with `git branch -d NEW-BRANCH-NAME`. It is now deleted. 
+
+
+## Working on a file collaboratively, and solving merge conflicts
+14. One of the most useful things about git is that it allows you to collaborate with other people. For example, say we have a file that we all need to use (for example, annotations on bird types, or information on using pMACS). In these cases, it makes sense to have one central file that everyone can edit. Git is perfect for this. Go to https://github.com/moncla-lab/github-collaboration-demo, and clone this repository into a new directory on your laptop. We are now going to have multiple people make edits to it, and deal with a merge conflict. 
+
+15. One person should now make a commit, or set of commits. Add people, reorder them, whatever you want. Push to remote. 
+
+16. Now, say I am also using this file. The best practice thing to do is to gather any new commits that others have made before I start my work. To do that, I can do `git pull`. Everyone should do that now. This will pull all of the work that has happened on remote onto your local branch, thus saving you from having to retype it. 
+
+17. Let's say though that I forgot to pull and instead started working on the file on my own. Sometimes this happens if you wait awhile to commit, or skip a commit, and someone else works on the project without you. In some cases, if the work you are doing on an old file conflicts with the version of the file on remote, you will run into "merge conflicts". In these cases, git cannot figure out by itself how to reconcile the changes, so you have to interactively reconcile the changes. I will do that now. 
+
+**[additional information on merge conflicts](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line)**
+
+
+## Additional notes on permissions
+
+One of the more confusing aspects of git and github are permissions issues, and these have gotten especially weird ever since git required the use of 2 factor authentication. I know that multiple people in the lab have had issues with pushing to repos, and Anna and I were troubleshooting this recently, and we figured it out. It turns out that this is likely due to 2 factor authentication issues. To overcome the issue, we did the following:
+
+1. Follow instructions in your terminal for setting up 2 factor authentication. You will have to go online and use a QR code to set this up. I use Duo, and this works fine.
+
+2. Then, this is quite confusing and not at all specified, but you also have to set a personal access token. Follow instructions to do that, which are outlined here: https://docs.github.com/en/enterprise-server@3.9/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+
+3. Once you've done that, you're ready to try to push again. When prompted on the command line for a username and password, enter your Github username and your personal access token instead of the password. I have no idea why the message does not specify that you need to use your token, but this is what you need to do. You should only have to do this once, and then you should be set! 
+
+* to troubleshoot this, we generally followed this article/set of instructions: https://docs.github.com/en/authentication/securing-your-account-with-two-factor-authentication-2fa/accessing-github-using-two-factor-authentication
+
+
+
+
+
