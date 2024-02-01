@@ -1,4 +1,4 @@
-# Github tutorial
+# Git tutorial and introduction
 
 February 1, 2024
 
@@ -49,12 +49,28 @@ c. Now, the final step is to push this change to the remote repository. To do th
 
 15. One person should now make a commit, or set of commits. Add people, reorder them, whatever you want. Push to remote. 
 
-16. Now, say I am also using this file. The best practice thing to do is to gather any new commits that others have made before I start my work. To do that, I can do `git pull`. Everyone should do that now. This will pull all of the work that has happened on remote onto your local branch, thus saving you from having to retype it. 
+16. Now, say I am also using this file. The best practice thing to do is to gather any new commits that others have made before I start my work. To do that, I can do `git pull`. Everyone should do that now. This will pull all of the work that has happened on remote onto your local branch, thus saving you from having to redo it. 
 
-17. Let's say though that I forgot to pull and instead started working on the file on my own. Sometimes this happens if you wait awhile to commit, or skip a commit, and someone else works on the project without you. In some cases, if the work you are doing on an old file conflicts with the version of the file on remote, you will run into "merge conflicts". In these cases, git cannot figure out by itself how to reconcile the changes, so you have to interactively reconcile the changes. I will do that now. 
+17. Let's say now that you also want to add information into the file. We don't always know who else in working on these files, potentially at the same time. Things can get messy when people try to merge work onto the main branch on remote at the same time. The best practice way to avoid these issues is to create a new branch, add your edits to that branch, push to remote, and then merge via Github on remote as a pull request. So, do the following: 
+
+a. After pulling, make a new branch with `git checkout -b BranchName`. This is a shortcut for making a new branch and switching to it. 
+b. Add your edits to the file. Commit them, and push the branch to remote: `git push origin BranchName`
+c. Now, we are going to pick one person to merge into main, and then the next person will do so. In some cases, when two people are pushing to the same file and making conflicting edits, you can run into "merge conflicts". In these cases, git cannot figure out by itself how to reconcile the changes, so you have to interactively reconcile the changes. To do so, create a pull request, fix merge conflicts, and submit the pull request on Github. 
+
+
+## What if you messed up and forgot to pull and then committed to main??
+If you did this and had a significant number of changes, you're going to have to do a rebase, which is sort of confusing. Let's say though that I forgot to pull and instead started working on the file on my own. Sometimes this happens if you wait awhile to commit, or skip a commit, and someone else works on the project without you. 
+
+`git pull --rebase`
+
+fix the merge conflicts.  
+
+`git add`, `git commit -m`, and `git push`. Then, exit the rebase with `git rebase --continue`. 
 
 **[additional information on merge conflicts](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line)**
 
+
+**git log --graph --all**
 
 ## Additional notes on permissions
 
