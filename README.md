@@ -1,3 +1,3 @@
 # teaching-lectures-and-labs
 
-This repository contains PDFs of my lecture slides, and links and markdown files for lab activities developed and compiled by Louise Moncla. You are welcome to use these materials if you'd like, just please credit this repository. 
+This repository contains PDFs of my lecture slides, and links and markdown files for lab activities that I have developed and compiled. You are welcome to use these materials if you'd like, just please credit this repository. Course materials for the Colorado State University Genomics of Disease in Wildlife Workshop can be found in its own repository [here](https://github.com/lmoncla/csu-genomics-disease-wildlife-workshop). 
