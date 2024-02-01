@@ -55,7 +55,7 @@ c. Now, the final step is to push this change to the remote repository. To do th
 
 a. After pulling, make a new branch with `git checkout -b BranchName`. This is a shortcut for making a new branch and switching to it. 
 b. Add your edits to the file. Commit them, and push the branch to remote: `git push origin BranchName`
-c. Now, we are going to pick one person to merge into main, and then the next person will do so. In some cases, when two people are pushing to the same file and making conflicting edits, you can run into "merge conflicts". In these cases, git cannot figure out by itself how to reconcile the changes, so you have to interactively reconcile the changes. To do so, create a pull request, fix merge conflicts, and submit the pull request on Github. 
+c. Now, we are going to pick one person to merge into main, and then the next person will do so. In some cases, when two people are pushing to the same file and making conflicting edits, you can run into "merge conflicts". In these cases, git cannot figure out by itself how to reconcile the changes, so you have to interactively reconcile the changes. To do so, create a pull request, fix merge conflicts, and submit the pull request on Github. Make sure you are merging branch into main. 
 
 
 ## What if you messed up and forgot to pull and then committed to main??
